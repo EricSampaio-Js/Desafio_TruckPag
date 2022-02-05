@@ -1,14 +1,15 @@
 import React from 'react';
-// import Router from './routers';
+import Router from './routers';
 
 import NavBar from './components/NavBar'
 
 
 const App = () => {
+
   return (
     <>
       <NavBar />
-      {/* <Router /> */}
+      <Router />
     </>
   );
 }
