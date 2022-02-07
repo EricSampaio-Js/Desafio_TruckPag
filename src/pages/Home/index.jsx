@@ -1,11 +1,22 @@
 import React from 'react';
 
+import FilterSimples from '../../components/Filters/FilterSimples'
+
+import Cards from '../../components/Cards'
+import Modal from '../../components/Modal'
+
+
 
 const Home = () => {
+
     return (
-        <div>
-            <h1>asdasdsa</h1>
-        </div>
+        <>
+            <FilterSimples />
+            <Cards/>
+            <Modal />
+        </>
+
+
     );
 }
 

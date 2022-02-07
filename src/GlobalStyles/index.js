@@ -7,7 +7,7 @@ export const GLobalStyled = createGlobalStyle`
         margin: 0;
         padding: 0;
         border:none;
-        outlien:none;
+        outline:none;
 
         list-style:none;
         text-decoration:none;
@@ -18,6 +18,7 @@ export const GLobalStyled = createGlobalStyle`
     :root{
         ${'' /* ========== COLOR ==================== */}
         --bg-color-primary:#531C99;
+        --bg-color-complement:#b999e2;
         --bg-color-gradient: linear-gradient(182.04deg, rgba(96, 24, 188, 0) -4.7%, rgba(120, 54, 204, 0.65) 98.28%);
         --bg-color-neutro-dark:#131419;
         --bg-color-neutro-dark-complement:#1C1C24;
