@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
     width:100vw;
     height:100vh;
     background:rgba(19 20, 25, 0.568);   
+    z-index:1000;
 `
 
 export const Container = styled.div`

@@ -1,6 +1,5 @@
-import React from 'react';
-
-import imageTeste from '../../assets/imageTest.svg'
+import React, { useEffect } from 'react';
+import { useDataCardsInfor } from '../../store/index'
 
 import {
     Container,
@@ -14,114 +13,83 @@ import {
     CloserIcon
 } from './style'
 
-const Modal = () => {
+const Modal = ({ setIsModal }) => {
+    const { inforPerson, setInforPerson } = useDataCardsInfor()
+    const {
+        name,
+        films,
+        shortFilms,
+        tvShows,
+        videoGames,
+        parkAttractions,
+        imageUrl,
+    } = inforPerson
+
+    useEffect(() => { console.log(inforPerson) }, [])
+
+    const handleCloserModal = () => {
+        setIsModal(current => current = false)
+    }
+
     return (
         <Wrapper>
             <Container>
                 <Title>Name: Queen Arianna</Title>
                 <Content>
-                    <img src={imageTeste} alt="" />
-                    <CloserIcon />
+                    <img src={imageUrl} alt="" />
+                    <CloserIcon onClick={handleCloserModal} />
                     <DataInfor>
                         <div>
                             <SubTitle>Films</SubTitle>
                             <Text>
-                                <li>Tangled</li>
-                                <li> Tangled: Before Ever After</li>
+
+                                {films[0] ? films.map((value, key) => (
+                                    <li key={key}>{value}</li>
+                                )) : <li>Não existe informações</li>}
+
                             </Text>
                         </div>
 
                         <div>
                             <SubTitle>Short Films</SubTitle>
                             <Text>
-                                <li>Tangled Ever After</li>
-                                <li> Hare Peacer</li>
+                                {shortFilms[0] ? shortFilms.map((value, key) => (
+                                    <li key={key}>{value}</li>
+                                )) : <li>Não existe informações</li>}
                             </Text>
                         </div>
 
                         <div>
                             <SubTitle>Tv Shows</SubTitle>
                             <Text>
-                                <li>  Once Upon a Time</li>
-                                <li> Tangled: The Series</li>
+                                {tvShows[0] ? tvShows.map((value, key) => (
+                                    <li key={key}>{value}</li>
+                                )) : <li>Não existe informações</li>}
                             </Text>
                         </div>
 
                         <div>
                             <SubTitle>Video Games:III</SubTitle>
                             <Text>
-                                <li>Disney Princess Enchanting Storybooks</li>
-                                <li>Hidden Worlds</li>
-                                <li> Disney Crossy Road</li>
-                                <li> Kingdom Hearts </li>
+                                {videoGames[0] ? videoGames.map((value, key) => (
+                                    <li key={key}>{value}</li>
+                                )) : <li>Não existe informações</li>}
                             </Text>
                         </div>
 
                         <div>
                             <SubTitle>ParkAttractions</SubTitle>
                             <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
+                                {parkAttractions[0] ? parkAttractions.map((value, key) => (
+                                    <li key={key}>{value}</li>
+                                )) : <li>Não existe informações</li>}
                             </Text>
                         </div>
-
-                        <div>
-                            <SubTitle>ParkAttractions</SubTitle>
-                            <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
-                            </Text>
-                        </div>
-
-                        <div>
-                            <SubTitle>ParkAttractions</SubTitle>
-                            <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
-                            </Text>
-                        </div>
-
-                        <div>
-                            <SubTitle>ParkAttractions</SubTitle>
-                            <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
-                            </Text>
-                        </div>
-
-                        <div>
-                            <SubTitle>ParkAttractions</SubTitle>
-                            <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
-                            </Text>
-                        </div>
-
-                        <div>
-                            <SubTitle>ParkAttractions</SubTitle>
-                            <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
-                            </Text>
-                        </div>
-
-                        <div>
-                            <SubTitle>ParkAttractions</SubTitle>
-                            <Text>
-                                <li>Celebrate the Magic</li>
-                                <li>Jingle Bell</li>
-                                <li>Jingle BAM!</li>
-                            </Text>
-                        </div>
-
                     </DataInfor>
-                    <Button>Saiba Mais</Button>
+                    <a href={`https://disney.fandom.com/wiki/${name}`}>
+                        <Button  >Saiba Mais</Button>
+                    </a>
+
                 </Content>
             </Container>
         </Wrapper>
