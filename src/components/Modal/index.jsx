@@ -10,16 +10,18 @@ import {
     DataInfor,
     SubTitle,
     Text,
-    Button
+    Button,
+    CloserIcon
 } from './style'
 
 const Modal = () => {
     return (
         <Wrapper>
             <Container>
-                <Title></Title>
+                <Title>Name: Queen Arianna</Title>
                 <Content>
                     <img src={imageTeste} alt="" />
+                    <CloserIcon />
                     <DataInfor>
                         <div>
                             <SubTitle>Films</SubTitle>
@@ -119,7 +121,7 @@ const Modal = () => {
                         </div>
 
                     </DataInfor>
-                <Button>Saiba Mais</Button>
+                    <Button>Saiba Mais</Button>
                 </Content>
             </Container>
         </Wrapper>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Buttons } from '../Buttons/style'
-
+import { RiCloseCircleFill } from 'react-icons/ri'
 
 export const Wrapper = styled.div`
     position:fixed;
@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
     position:relative;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     width:900px;
@@ -26,7 +27,6 @@ export const Container = styled.div`
     background-color:var( --bg-color-neutro-dark-complement);
 
 `
-
 
 export const Content = styled.div`
     display:flex;
@@ -42,6 +42,12 @@ export const Content = styled.div`
 `
 
 export const Title = styled.div`
+    position:relative;
+    bottom:48px;
+    font-size:32px;
+    font-weight:600;
+    color:var(--bg-color-neutro-light);
+
 `
 export const DataInfor = styled.div`
     display:grid;
@@ -89,3 +95,20 @@ export const Button = styled(Buttons)`
     margin-right:56px;
     margin-bottom:25px;
 `
+
+export const CloserIcon = styled(RiCloseCircleFill)`
+
+    transform:scale(3);
+    position:absolute;
+    top:0;
+    right:0;
+    cursor:pointer;
+    margin-right:30px;
+    margin-top:30px;
+    path{
+        color:var(--bg-color-primary);
+      
+    };
+
+
+` 
