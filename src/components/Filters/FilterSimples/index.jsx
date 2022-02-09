@@ -8,7 +8,7 @@ import Field from '../../Inputs'
 import { Form, SearchIcon } from './style'
 
 
-const FilterSimple = () => {
+const FilterSimples = () => {
     const { register, handleSubmit } = useForm()
     const { dataCard, setDataCard } = useDataCards()
 
@@ -40,4 +40,4 @@ const FilterSimple = () => {
     );
 }
 
-export default FilterSimple;
+export default FilterSimples;

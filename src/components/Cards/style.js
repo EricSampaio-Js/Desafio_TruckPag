@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
+import { Buttons } from '../Buttons/style'
 
 
 export const Container = styled.div`
@@ -8,7 +8,7 @@ export const Container = styled.div`
 
     width:78.5505%;
     margin: 90px auto;
-`  
+`
 export const Card = styled.div`
     position:relative;
     width:200px;
@@ -64,4 +64,25 @@ export const Card = styled.div`
          box-shadow: 0px 0px 5px var(--bg-color-complement);
     }
  
+`
+
+export const Paginations = styled.div`
+    grid-column:1 / -1;
+    width:100%;
+    text-align:end;
+`
+
+export const ButtonsNextAndBack = styled(Buttons)`
+    margin:32px 0  0 32px;
+
+    ${({ countBack }) => {
+        const value = countBack && countBack.includes('2')
+        if (value) {
+            return css`
+               background-color:#bdbcbcb7;
+               pointer-events: none;
+            `
+        }
+    }}
+    
 `
