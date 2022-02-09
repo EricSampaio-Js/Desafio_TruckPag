@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import { useDataCards, useDataCardsInfor } from '../../store/index'
 
+import { Buttons } from '../Buttons/style'
+
 import Modal from '../../components/Modal'
 import { Container, Card } from './style'
 
@@ -18,6 +20,8 @@ const Cards = () => {
         const { data } = await axios.get(`https://api.disneyapi.dev/characters`)
         setDataCard(current => current = data)
 
+        console.log(data)
+
     }, [])
 
     const handleInforPerson = (id) => {
@@ -27,11 +31,21 @@ const Cards = () => {
         setInforPerson(current => current = dataInfor)
         setIsModal(current => current = true)
     }
+
+    const handlePaginationNext = async () => {
+        const { data } = await axios.get(dataCard.nextPage)
+        setDataCard(current => current = data)
+    }
+
+    const handlePaginationBack = async ()=>{
+        const { data } = await axios.get(dataCard.previousPage)
+        setDataCard(current => current = data)
+    }
+
     return (
         <Container>
             {isModal && <Modal setIsModal={setIsModal} />}
             {
-
                 data && data.map((data) => {
                     return (
                         <Card key={data._id} onClick={() => handleInforPerson(data._id)} >
@@ -41,7 +55,8 @@ const Cards = () => {
                     )
                 })
             }
-
+            <Buttons onClick={handlePaginationBack}>Back</Buttons>
+            <Buttons onClick={handlePaginationNext}>Next</Buttons>
         </Container>
     );
 }
