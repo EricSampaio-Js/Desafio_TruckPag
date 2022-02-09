@@ -34,7 +34,7 @@ const Modal = ({ setIsModal }) => {
     return (
         <Wrapper>
             <Container>
-                <Title>Name: Queen Arianna</Title>
+                <Title>Name: {name}</Title>
                 <Content>
                     <img src={imageUrl} alt="" />
                     <CloserIcon onClick={handleCloserModal} />

@@ -1,6 +1,8 @@
 import React from 'react';
-
 import { useForm } from 'react-hook-form'
+import { useDataCards } from '../../../store/index'
+
+
 
 import Field from '../../Inputs'
 
@@ -10,9 +12,8 @@ import { Form } from './style'
 const FilterSimple = () => {
     const { register, handleSubmit } = useForm()
 
-
-    const teste = () => {
-        console.log('apenas um teste')
+    const teste = (data) => {
+        console.log(data)
     }
 
     return (
@@ -20,7 +21,7 @@ const FilterSimple = () => {
         <Form onSubmit={handleSubmit(teste)}>
             <Field.Text
                 type={'text'}
-                name={'search'}
+                name={'name'}
                 register={register}
             />
         </Form>
