@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
     height:100vh;
     background:rgba(19 20, 25, 0.568);   
     z-index:1000;
+    
 `
 
 export const Container = styled.div`
@@ -31,8 +32,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     display:flex;
-    width:91%;
-
+    width:92%;
+   
     >img{
         width:205px;
         height:355px;
@@ -55,6 +56,8 @@ export const DataInfor = styled.div`
     grid-template-columns:1fr 1fr;
     row-gap: 25px;
 
+  
+
     width:100%;
     height:355px;
     overflow-y:scroll;
@@ -63,7 +66,7 @@ export const DataInfor = styled.div`
     color:var(--bg-color-neutro-light);
 
     ::-webkit-scrollbar {
-        width:15px;
+        width:10px;
     }
     ::-webkit-scrollbar-track {
         background:var( --bg-color-neutro-dark);

@@ -1,19 +1,15 @@
 import React from 'react';
 
-import FilterSimples from '../../components/Filters/FilterSimples'
-
+import Filter from '../../components/Filters'
 import Cards from '../../components/Cards'
-
-
 
 
 const Home = () => {
 
     return (
-        <>
-            <FilterSimples />
+        <>  
+            <Filter />
             <Cards/>
-            
         </>
 
 

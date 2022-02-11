@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 import { RiSearchLine } from 'react-icons/ri'
-
-
+import { Buttons } from '../../Buttons/style'
 
 
 export const Form = styled.form`
@@ -22,6 +21,7 @@ export const Form = styled.form`
         width:100%;
         height:40px;
         border-radius: 4px;
+       
         
         font-size:1.125rem;
         padding-left:75px;
@@ -34,9 +34,7 @@ export const Form = styled.form`
       
     }
 
-
 `
-
 export const SearchIcon = styled(RiSearchLine)`
     position:absolute;
     align-items: center;   top:0;
@@ -46,4 +44,10 @@ export const SearchIcon = styled(RiSearchLine)`
     box-sizing: unset;
     padding: 6px 0 0px 24px;
 
+`
+
+export const ButtonFilter = styled(Buttons)`
+    margin:15px 0 0 138px; ;
+    width:120px;
+    height:30px;
 `

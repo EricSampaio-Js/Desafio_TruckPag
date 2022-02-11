@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 import { Buttons } from '../Buttons/style'
 
 
+import { IoHomeSharp } from 'react-icons/io5';
+
 export const Container = styled.div`
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(200px,200px));
@@ -70,13 +72,19 @@ export const Paginations = styled.div`
     grid-column:1 / -1;
     width:100%;
     text-align:end;
+
+    ${({ isFilter }) => isFilter && css`
+        display:none;
+    `}  
+
 `
 
 export const ButtonsNextAndBack = styled(Buttons)`
     margin:32px 0  0 32px;
 
     ${({ countBack }) => {
-        const value = countBack && countBack.includes('2')
+        const value = countBack && countBack.match(/page=2$/)
+        console.log(value)
         if (value) {
             return css`
                background-color:#bdbcbcb7;
@@ -84,5 +92,18 @@ export const ButtonsNextAndBack = styled(Buttons)`
             `
         }
     }}
-    
+`
+
+export const ButtonHome = styled(Buttons)`
+ 
+    position:relative;
+    width:60px;
+    top:4px;
+    color:var( --bg-color-neutro-light);
+`
+
+export const HomeIcon = styled(IoHomeSharp)`
+    padding-top:2px;
+    width:20px;
+    height:20px;
 `

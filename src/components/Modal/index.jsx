@@ -14,7 +14,7 @@ import {
 } from './style'
 
 const Modal = ({ setIsModal }) => {
-    const { inforPerson, setInforPerson } = useDataCardsInfor()
+    const { inforPerson } = useDataCardsInfor()
     const {
         name,
         films,

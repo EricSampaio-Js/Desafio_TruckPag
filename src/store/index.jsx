@@ -5,14 +5,21 @@ const StateProvider = createContext()
 const Provider = ({ children }) => {
 
     const [dataCard, setDataCard] = useState({})
-    const [inforPerson, setInforPerson] = useState({})
+    const [inforPerson, setInforPerson] = useState()
+    const [exibiDataChar, setExibiDataChar] = useState({})
+    const [isFilter, setIsFilter] = useState(false)
+
 
     return (
         <StateProvider.Provider value={{
             dataCard,
             setDataCard,
             inforPerson,
-            setInforPerson
+            setInforPerson,
+            exibiDataChar,
+            setExibiDataChar,
+            isFilter,
+            setIsFilter
         }
 
         }>
@@ -30,8 +37,14 @@ export const useDataCardsInfor = () => {
     return { inforPerson, setInforPerson }
 }
 
-
-
+export const useExibiDataChar = () => {
+    const { exibiDataChar, setExibiDataChar } = useContext(StateProvider);
+    return { exibiDataChar, setExibiDataChar }
+}
+export const useIsFilter = () => {
+    const { isFilter, setIsFilter } = useContext(StateProvider);
+    return { isFilter, setIsFilter }
+}
 
 
 export default Provider;
