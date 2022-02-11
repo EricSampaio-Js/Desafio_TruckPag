@@ -21,17 +21,19 @@ export const Form = styled.form`
         width:100%;
         height:40px;
         border-radius: 4px;
-       
-        
         font-size:1.125rem;
         padding-left:75px;
 
         &:focus{
             border:2px solid var(--bg-color-complement);
-          
             box-shadow: 0px 0px 10px var(--bg-color-complement);
-        }
-      
+        }      
+    }
+
+    &>div>label>span{
+        color:#cacaca;
+        font-weight:700;
+        font-size:0.625rem;
     }
 
 `
@@ -47,7 +49,7 @@ export const SearchIcon = styled(RiSearchLine)`
 `
 
 export const ButtonFilter = styled(Buttons)`
-    margin:15px 0 0 138px; ;
+    margin:24px 0 0 138px; ;
     width:120px;
     height:30px;
 `
